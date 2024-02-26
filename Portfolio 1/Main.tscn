@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt68roggdly3v"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_emdh7"]
+[ext_resource type="Texture2D" uid="uid://nwinxefjalvm" path="res://icon.svg" id="2_06llw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n1r30"]
+texture = ExtResource("2_06llw")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_jhyvy"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_n1r30")
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_emdh7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.3, 0.3)
+
+[node name="Rooms" type="Node" parent="."]
+
+[node name="Room Timer" type="Timer" parent="."]
+
+[node name="Path Timer" type="Timer" parent="."]
+
+[node name="TileMap" type="TileMap" parent="."]
+show_behind_parent = true
+tile_set = SubResource("TileSet_jhyvy")
+rendering_quadrant_size = 32
+format = 2
+layer_0/name = "Layer 1"
